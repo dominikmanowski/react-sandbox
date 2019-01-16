@@ -5,7 +5,8 @@ const allUsers = ["Ula", "Ala", "Basia", "Maryla", "Mirek", "Janusz"];
 
 class UsersListView extends Component {
   state = {
-    filteredUsers: allUsers
+    filteredUsers: allUsers,
+    selectedUser: null
   };
 
   getFilteredUsersForText(text) {
@@ -22,11 +23,21 @@ class UsersListView extends Component {
     });
   };
 
+  onUserSelected = selectedUser => {
+    this.setState({
+      selectedUser
+    });
+  };
+
   render() {
     return (
       <>
         <input type="text" onInput={this.filterUsers} />
-        <UsersList users={this.state.filteredUsers} />
+        <h2>{this.state.selectedUser}</h2>
+        <UsersList
+          userSelected={this.onUserSelected}
+          users={this.state.filteredUsers}
+        />
       </>
     );
   }
