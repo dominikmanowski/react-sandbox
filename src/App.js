@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SimpleForm from "./components/SimpleForm";
 import Clock from "./components/Clock";
 import UsersListView from "./components/UsersListView";
+import ContactsApp from "./components/ContactApp";
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
         <SimpleForm />
         <Clock />
         <UsersListView />
+        <ContactsApp />
       </>
     );
   }
