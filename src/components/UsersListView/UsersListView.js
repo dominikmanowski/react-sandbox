@@ -14,18 +14,18 @@ class UsersListView extends Component {
     );
   }
 
-  filterUsers(e) {
+  filterUsers = e => {
     const text = e.currentTarget.value;
     const filteredUsers = this.getFilteredUsersForText(text);
     this.setState({
       filteredUsers
     });
-  }
+  };
 
   render() {
     return (
       <>
-        <input type="text" onInput={this.filterUsers.bind(this)} />
+        <input type="text" onInput={this.filterUsers} />
         <UsersList users={this.state.filteredUsers} />
       </>
     );
